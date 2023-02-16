@@ -31,7 +31,12 @@ public class MemoryMemberRepository implements MemberRepository{
     }
 
     @Override
-    public List<Member> finalAll() { //Map인데 반환은 리스트로 되어있음
+    public List<Member> findAll() { //Map인데 반환은 리스트로 되어있음
         return new ArrayList<>(store.values());
     }
+
+    public void clearStore() {
+        store.clear();
+    }
+
 }
