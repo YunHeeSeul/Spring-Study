@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div class="container">
+    <div>
+        <table>
+            <thread>
+                <tr>
+                    <th>#</th>
+                    <th>이름</th>
+                </tr>
+                <tbody>
+<!--                th:each => 루프를 도는 것 thymeleaf의 문법임.-->
+<!--                즉,MemberController의 list(Model model)에서 model에 addAttribute로 키 "members"안에 리스트로 모든 회원을 담아뒀는데-->
+<!--                이 리스트를 다 돌면서 아래 로직을 실행하는 것-->
+                <tr th:each="member : ${members}">
+<!--                    ${members} => 모델 안의 members를 템플릿에서 읽어들임-->
+                    <td th:text="${member.id}"></td>
+                    <td th:text="${member.name}"></td>
+                </tr>
+                </tbody>
+            </thread>
+        </table>
+    </div>
+</div>
+</body>
+</html>
